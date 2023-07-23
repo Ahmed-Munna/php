@@ -176,6 +176,10 @@ Sometimes, you need to reset the MySQL root account password. In that case, you 
 
 -- end of update
 
+MySQL CREATE TableMySQL ALTER TableMySQL Show TablesMySQL Rename TableMySQL TRUNCATE TableMySQL Describe TableMySQL DROP TableMySQL Temporary TableMySQL Copy TableMySQL Repair TableMySQL Add/Delete ColumnMySQL Show ColumnsMySQL Rename ColumnMySQL ViewsMySQL Table LockingMySQL Account LockMySQL Account Unlock
+MySQL QueriesMySQL ConstraintsMySQL INSERT RecordMySQL UPDATE RecordMySQL DELETE RecordMySQL SELECT RecordMySQL ReplaceInsert On Duplicate Key UpdateMySQL INSERT IGNOREInsert Into Select
+
+
 
 
 
