@@ -10,10 +10,29 @@
 // echo var_dump($x == $y);
 
 
-$srt = "Something";
+// $srt = array("laskd", "sdkf");
 
-echo $srt[0];
+// // array destructure
 
+// [$a, $b] = $srt;
+
+// $srt = array(
+//     'a' => "A",
+//     'b' => "B",
+// );
+// ['a' => $a] = $srt;
+// var_dump($a);
+
+
+class myClass {
+    public $a = 0;
+    function myFunc() {
+        print_r($this);
+    }
+}
+
+$mc = new myClass();
+$mc->myFunc();
 
 
 
