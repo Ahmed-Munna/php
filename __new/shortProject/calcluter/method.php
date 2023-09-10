@@ -1,6 +1,5 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    return 'ladsk';
+   echo json_encode(JSON.parse($_GET["body"]));
 }

@@ -25,11 +25,11 @@ submit.onclick = () => {
         fetch(url, {
             method: "POST",
 
-            body: {
+            body: JSON.stringify({
                 nOne: numOne,
                 nTwo: numTwo,
                 oparation: opara
-            },
+            }),
         })
         .then(data => data.json())
         .then(res => {
