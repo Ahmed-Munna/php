@@ -1,14 +1,14 @@
 <?php
 
 $a =40;
-define('PARSON', array(
+define("PARSON", array(
     'name' => "Munna",
     'age' => "20"
 ));
 
 function myFunc() {
     echo __LINE__.PHP_EOL;
-    return PARSON['name'];
+    return PARSON['name'].PHP_EOL;
 }
 
 $b = array(2,4,5);
