@@ -28,11 +28,11 @@
                     $operation = $_POST["operation"];
 
                     switch($operation){
-                        case "celsius";
+                        case "celsius":
                             echo "Celsius: " . (($tempa - 32) * (5 / 9)) . "°C";
                             break;
                         
-                        case "fahrenheit";
+                        case "fahrenheit":
                             echo "Fahrenheit: " . (($tempa * 9/5) + 32) . "°F";
                             break;
                     }
