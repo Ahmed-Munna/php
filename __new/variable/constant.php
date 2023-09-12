@@ -1,18 +1,19 @@
 <?php
 
-$a =40;
+$a = 40;
 define("PARSON", array(
     'name' => "Munna",
     'age' => "20"
 ));
 
-function myFunc() {
-    echo __LINE__.PHP_EOL;
-    return PARSON['name'].PHP_EOL;
+function myFunc()
+{
+    echo __LINE__ . PHP_EOL;
+    return PARSON['name'] . PHP_EOL;
 }
 
-$b = array(2,4,5);
-$c = array(3,1,2,4,5);
+$b = array(2, 4, 5);
+$c = array(3, 1, 2, 4, 5);
 $d = $b + $c;
 echo myFunc();
 var_dump($d);
