@@ -33,7 +33,32 @@ submit.onclick = () => {
         })
         .then(data => data.json())
         .then(res => {
-            console.log(res);
+            let one = parseInt(res["nOne"]);
+            let two = parseInt(res["nTwo"]);
+
+            switch(res["oparation"]){
+                case "add":
+                    result.innerText = "Resust: " + (one + two);
+                    break;
+                case "subtract":
+                    result.innerText = "Resust: " + (one - two);
+                    break;
+                case "multiply":
+                    result.innerText = "Resust: " + (one * two);
+                    break;
+                case "divide":
+                        result.innerText = "Resust: " + (one / two);
+                        break;
+                case "binary":
+                    result.innerText = "Resust: " + ((one + two).toString(2));
+                    break;
+                case "octal":
+                    result.innerText = "Resust: " + ((one + two).toString(8));
+                    break;
+                case "hexadecimal":
+                    result.innerText = "Resust: " + ((one + two).toString(16));
+                    break;
+            }
         })
     }
 }

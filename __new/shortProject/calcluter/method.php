@@ -1,5 +1,7 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-   echo json_encode(JSON.parse($_GET["body"]));
+   $content = file_get_contents("php://input");
+
+   echo $content;
 }

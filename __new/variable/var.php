@@ -13,3 +13,4 @@ if (true) {
 $a = 59;
 echo $a;
 
+echo json_encode(["a" => 'alkd']);
