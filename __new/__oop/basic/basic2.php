@@ -1,5 +1,5 @@
 <?php
-
+/*
 class ParrentClass {
 
     public function getNew() {
@@ -20,3 +20,22 @@ $newParrentObj = new $ParrentObj;
 var_dump($newParrentObj === $ParrentObj);
 
 echo (new DateTime())->format('D');
+*/
+
+
+class MainClass {
+
+   public $name;
+   public function __construct() {
+
+    $this->name = function() {
+
+        return "Munna";  
+    };
+   }
+}
+
+
+$MainCls = new MainClass();
+
+echo ($MainCls->name)();
