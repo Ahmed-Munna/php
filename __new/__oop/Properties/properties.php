@@ -1,5 +1,10 @@
 <?php
 
+spl_autoload_register(function ($name) {
+
+    include $name . '.php';
+});
+
 class Property {
 
     public readonly string $assign;
@@ -16,5 +21,6 @@ echo $Property->assign;
 
 $Property->myInfo = "Bangladesh";
 
-
 var_dump(Property::age);
+
+echo BasicInfo::myInfo();
