@@ -32,9 +32,11 @@ $p1 = ParrentClass::PersonOne("Munna", 20);
 
 class ParrentClass {
 
+    protected const CONSTANTS = "CONSTANTS😀";
+
     public function __construct() {
 
-        print("Parrent Class start");
+        print("Parrent Class Start");
     }
 
     public function __destruct() {
@@ -48,6 +50,23 @@ class ParrentClass {
     }
 }
 
-$parrentClass = new ParrentClass();
+class ChildClass extends ParrentClass {
 
-$parrentClass->MyName();
+    // public function __construct() {
+
+    //     echo self::CONSTANTS;
+    // }
+}
+
+class ChildClassTwo extends ChildClass {
+
+    public const CONSTANT = "HELLO CONST";
+    public function __construct() {
+
+        echo parent::CONSTANTS;
+    }
+}
+
+$parrentClass = new ChildClassTwo();
+
+// $parrentClass->MyName();
