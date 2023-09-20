@@ -10,6 +10,8 @@ interface ModelA {
 interface ModelB {
     public static function show($data);
     public static function update($data);
+
+    const DontKnowWhatShouldIwrite = "slkd";
 }
 
 interface ModelC extends ModelA, ModelB {
@@ -30,8 +32,8 @@ class Oparation implements ModelC {
     public static function create($data) {
 
         self::$createData = $data;
-
-        return self::$createData . " is created";
+        $txt = self::DontKnowWhatShouldIwrite;
+        return self::$createData . " is created, $txt";
     }
 
     public static function read($data) {
