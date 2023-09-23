@@ -23,3 +23,8 @@ echo "Age: ".$age.PHP_EOL;
 echo "Country: ".$country.PHP_EOL;
 echo "Introduction: ".$introduction.PHP_EOL;
 
+$x = 4;
+
+echo $x.PHP_EOL;
+
+echo $x+++$x++;
