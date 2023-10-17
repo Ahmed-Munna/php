@@ -2,7 +2,10 @@
 
 namespace communitys;
 
-include('autoloader.php');
+include('autoload.php');
+
+\Autoloader::autoload(__NAMESPACE__);
+
 
 
 use communitys\Community;
