@@ -25,8 +25,6 @@ class Database {
     }
 }
 
-print_r(new Database);
-
 
 
 

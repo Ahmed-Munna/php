@@ -44,7 +44,7 @@ class Post extends Database {
 
     // fetch all post from db
 
-    public function read(bool $returns = false) {
+    public function read($returns = false) {
 
         try {
 
