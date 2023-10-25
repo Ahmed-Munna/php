@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // has any email and password or not
         if (
             $_SESSION["email"] == $email && 
-            $_SESSION["password"] == $password
+            $_SESSION["password"] == sha1($password)
             ) {
                 $_SESSION["error"] = '';
                 $_SESSION['massege'] = 'Login Successfull';

@@ -3,7 +3,6 @@ include("../classes/Main.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-
     $data = [
         "name" => $_POST["name"],
         "email" => $_POST["email"],
@@ -19,25 +18,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ) {
 
 
-        $name = Main::filter($data["name"]);
+        $name = strtolower(Main::filter($data["name"]));
         $email = Main::filter($data["email"]);
-        $password = Main::filter($data["password"]);
+        $password = sha1(Main::filter($data["password"]));
         $acceptCondition = Main::filter($data["accept"]);
 
-        session_start();
+        if (!file_exists("database/$name.json")) {
 
-        $_SESSION["name"] = $name;
-        $_SESSION["email"] = $email;
-        $_SESSION["accept"] = $acceptCondition;
-        $_SESSION["password"] = $password;
-        $_SESSION["error"] = '';
-        $_SESSION['massege'] = 'Login Successfull';
+            session_start();
 
-        header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
+            $_SESSION["name"] = $name;
+            $_SESSION["email"] = $email;
+            $_SESSION["accept"] = $acceptCondition;
+            $_SESSION["password"] = $password;
+            $_SESSION["error"] = '';
+
+            Main::json([
+                "name" => $name,
+                "email" => $email,
+                "password" => $password,
+                "accept" => $acceptCondition,
+                "role" => "user"
+            ]);
+
+            header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
+        } else {
+
+            $_SESSION["error"] = "user name already exist";
+            header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php");
+        }
 
     } else {
 
         $_SESSION["error"] = "You should fillup all input field";
-        header("Location: http://localhost/php/__new/assignment/Module-5/sign-in.php");
+        header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php");
     }
 }

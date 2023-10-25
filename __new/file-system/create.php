@@ -5,5 +5,5 @@ $json = json_encode([
     "email" => "munna@mail.com",
     "password" => "123456",
 ]);
-$op = fopen("all-file/aaa.json", "w");
+$op = fopen("../all-file/bbbb.json", "w");
 echo fwrite($op, $json);
