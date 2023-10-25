@@ -144,21 +144,7 @@
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     <pre>
 
-   <?php 
-        if (isset($_SESSION)) {
-            $allSessions = [];
-            $sessionNames = scandir(session_save_path());
-
-            foreach($sessionNames as $sessionName) {
-                $sessionName = str_replace("sess_","",$sessionName);
-                if(strpos($sessionName,".") === false) { 
-                    $allSessions[$sessionName] = $_SESSION;
-                    session_abort();
-                }
-            }
-            print_r($allSessions);
-        }
-      ?>
+  
     </pre>
    </div>
 </div>
