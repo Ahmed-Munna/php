@@ -3,10 +3,10 @@ session_start();
 
 // // If the user has already logged in, then redirect to the index page.
 
-// if (isset($_SESSION["email"]) && isset($_SESSION["password"])) {
+if (isset($_SESSION["email"]) && isset($_SESSION["password"])) {
 
-//     header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
-// }
+    header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
+}
 ?>
 
 <html lang="en">
@@ -41,8 +41,8 @@ session_start();
                         </div>
                         <p class="text-sm text-red-600">
                             <?php
-                                if ( isset($_SESSION["error"]) && $_SESSION["error"] != "") {
-                                    echo $_SESSION["error"];
+                                if ( isset($_GET["error"])) {
+                                    echo $_GET["error"];
                                 }
                             ?>
                         </p>

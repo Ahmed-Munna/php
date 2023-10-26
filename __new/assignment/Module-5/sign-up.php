@@ -45,7 +45,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["password"])) {
                         </div>
                         <p class="text-sm text-red-600">
                             <?php
-                                if ( isset($_SESSION["error"]) && $_SESSION["error"] != "") {
+                                if ( isset($_GET["error"])) {
                                     echo $_SESSION["error"];
                                 }
                             ?>

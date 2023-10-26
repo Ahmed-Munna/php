@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ];
 
     // here semple validation for blank input fields
+
     if (
         isset($data["email"]) &&
         isset($data["password"])
@@ -21,21 +22,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = Main::filter($data["password"]);
 
         // has any email and password or not
-        if (
-            $_SESSION["email"] == $email && 
-            $_SESSION["password"] == sha1($password)
-            ) {
-                $_SESSION["error"] = '';
-                $_SESSION['massege'] = 'Login Successfull';
-                header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
+        if (Main::hasValue($data["email"],$data["password"])) {
+
+                $profileValue = Main::fatchProfileValue($data["email"],$data["password"]);
+                
+                $_SESSION["name"] = $profileValue["name"];
+                $_SESSION["email"] = $profileValue["email"];
+                $_SESSION["password"] = $profileValue["password"];
+                $_SESSION["role"] = $profileValue["role"];
+
+                $msg = 'Login Successfull';
+                header("Location: http://localhost/php/__new/assignment/Module-5/index.php?msg=".$msg);
             } else {
 
-                $_SESSION["error"] = "Invalid input field";
-                header("Location: http://localhost/php/__new/assignment/Module-5/sign-in.php");
+                $error = "Invalid input field";
+                header("Location: http://localhost/php/__new/assignment/Module-5/sign-in.php?error=".$error);
             }
     } else {
         
-        $_SESSION["error"] = "You should fillup all input field";
-        header("Location: http://localhost/php/__new/assignment/Module-5/sign-in.php");
+        $error = "You should fillup all input field";
+        header("Location: http://localhost/php/__new/assignment/Module-5/sign-in.php?error=". $error);
     }
 }

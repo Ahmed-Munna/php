@@ -31,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["email"] = $email;
             $_SESSION["accept"] = $acceptCondition;
             $_SESSION["password"] = $password;
-            $_SESSION["error"] = '';
 
             Main::json([
                 "name" => $name,
@@ -41,16 +40,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "role" => "user"
             ]);
 
-            header("Location: http://localhost/php/__new/assignment/Module-5/index.php");
+            $msg = "Register Successfull";
+            header("Location: http://localhost/php/__new/assignment/Module-5/index.php?msg".$msg);
         } else {
 
-            $_SESSION["error"] = "user name already exist";
-            header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php");
+            $error = "user name already exist";
+            header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php?error=".$error);
         }
 
     } else {
 
-        $_SESSION["error"] = "You should fillup all input field";
-        header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php");
+        $error = "You should fillup all input field";
+        header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php?error".$error);
     }
 }
