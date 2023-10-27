@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["name"] = $name;
             $_SESSION["email"] = $email;
             $_SESSION["accept"] = $acceptCondition;
-            $_SESSION["password"] = $password;
+            $_SESSION["password"] = $data["password"];
 
             Main::json([
                 "name" => $name,
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             $msg = "Register Successfull";
-            header("Location: http://localhost/php/__new/assignment/Module-5/index.php?msg".$msg);
+            header("Location: http://localhost/php/__new/assignment/Module-5/index.php?msg=".$msg);
         } else {
 
             $error = "user name already exist";

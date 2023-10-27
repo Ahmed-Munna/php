@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 $_SESSION["name"] = $profileValue["name"];
                 $_SESSION["email"] = $profileValue["email"];
-                $_SESSION["password"] = $profileValue["password"];
+                $_SESSION["password"] = $data["password"];
                 $_SESSION["role"] = $profileValue["role"];
 
                 $msg = 'Login Successfull';
