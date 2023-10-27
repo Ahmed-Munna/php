@@ -111,4 +111,15 @@ class Main {
             }
         }
     }
+
+    public static function updateJson(string $oldName, array $data) {
+
+        unlink("../public/database/{$oldName}.json");
+
+        $fileName = $data["name"];
+        $convartJson = json_encode($data);
+
+        $fileOpen = fopen("../public/database/{$fileName}.json", "w");
+        fwrite($fileOpen, $convartJson);
+    }
 }

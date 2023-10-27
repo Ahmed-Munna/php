@@ -41,16 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             $msg = "Register Successfull";
-            header("Location: http://localhost/php/__new/assignment/Module-5/index.php?msg=".$msg);
+            header("Location: ../index.php?msg=".$msg);
         } else {
 
             $error = "user name already exist";
-            header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php?error=".$error);
+            header("Location: ../sign-up.php?error=".$error);
         }
 
     } else {
 
         $error = "You should fillup all input field";
-        header("Location: http://localhost/php/__new/assignment/Module-5/sign-up.php?error".$error);
+        header("Location: ../sign-up.php?error".$error);
     }
 }

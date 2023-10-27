@@ -27,20 +27,15 @@
 </head>
 <body>
     
-
-
-
-
 <?php 
 include("public/template/navbar.php");
 include("public/template/sidebar.php");
 ?>
 
-
-
 <div class="p-4 sm:ml-64">
    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
     <h1 class="p-4 mb-8 shadow text-xl font-semibold">Users management</h1>
+    <p class="text-lime-400"></p><?php if(isset($_GET["msg"]))  echo $_GET["msg"];?></p>
     <div class="flex flex-col">
   <div class="-m-1.5 overflow-x-auto">
     <div class="p-1.5 min-w-full inline-block align-middle">
